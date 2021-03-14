@@ -19,6 +19,7 @@ class Game extends Model {
 
   static associate(models) {
     this.belongsToMany(models.Shop, { through: "game_shop" });
+    this.belongsToMany(models.Order, { through: "orders" });
   }
 }
 

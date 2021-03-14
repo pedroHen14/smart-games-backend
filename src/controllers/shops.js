@@ -12,4 +12,18 @@ module.exports = {
       res.status(500).send(error);
     }
   },
+
+  async find(req, res) {
+    const shopId = req.params.id;
+
+    try {
+      const shop = await Shop.findByPk(shopId, {
+        attributes: ["id", "name", "number", "street", "city", "state"],
+      });
+
+      res.send(shop);
+    } catch (error) {
+      res.status(500).send(error);
+    }
+  },
 };
