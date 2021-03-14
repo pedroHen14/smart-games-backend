@@ -9,6 +9,7 @@ class Game extends Model {
         image: DataTypes.STRING,
         release_date: DataTypes.DATE,
         developer: DataTypes.STRING,
+        price: DataTypes.DECIMAL,
       },
       {
         sequelize,
@@ -17,7 +18,7 @@ class Game extends Model {
   }
 
   static associate(models) {
-    this.belongsToMany(models.Store, { through: "game_store" });
+    this.belongsToMany(models.Shop, { through: "game_shop" });
   }
 }
 

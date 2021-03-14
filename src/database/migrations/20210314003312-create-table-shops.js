@@ -12,7 +12,19 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false,
       },
-      address: {
+      number: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+      },
+      street: {
+        type: Sequelize.STRING,
+        allowNull: false,
+      },
+      city: {
+        type: Sequelize.STRING,
+        allowNull: false,
+      },
+      state: {
         type: Sequelize.STRING,
         allowNull: false,
       },
