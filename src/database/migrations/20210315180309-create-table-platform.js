@@ -2,7 +2,7 @@
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    queryInterface.createTable("games", {
+    queryInterface.createTable("platforms", {
       id: {
         type: Sequelize.INTEGER,
         primaryKey: true,
@@ -10,18 +10,6 @@ module.exports = {
       },
       name: {
         type: Sequelize.STRING,
-        allowNull: false,
-      },
-      description: {
-        type: Sequelize.TEXT,
-        allowNull: false,
-      },
-      image: {
-        type: Sequelize.STRING,
-        allowNull: true,
-      },
-      price: {
-        type: Sequelize.FLOAT,
         allowNull: false,
       },
       created_at: {
@@ -36,6 +24,6 @@ module.exports = {
   },
 
   down: async (queryInterface, Sequelize) => {
-    queryInterface.dropTable("games");
+    queryInterface.dropTable("platforms");
   },
 };

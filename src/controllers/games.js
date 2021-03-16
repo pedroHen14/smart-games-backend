@@ -4,19 +4,16 @@ module.exports = {
   async index(req, res) {
     try {
       const games = await Game.findAll({
-        attributes: [
-          "id",
-          "name",
-          "description",
-          "image",
-          "release_date",
-          "developer",
-          "price",
-        ],
+        attributes: ["id", "name", "description", "image", "price"],
         include: [
           {
             association: "Shops",
-            attributes: ["id", "name", "number", "street", "city", "state"],
+            attributes: ["id", "name"],
+            through: { attributes: [] },
+          },
+          {
+            association: "Platforms",
+            attributes: ["id", "name"],
             through: { attributes: [] },
           },
         ],
@@ -33,19 +30,16 @@ module.exports = {
 
     try {
       const game = await Game.findByPk(gameId, {
-        attributes: [
-          "id",
-          "name",
-          "description",
-          "image",
-          "release_date",
-          "developer",
-          "price",
-        ],
+        attributes: ["id", "name", "description", "image", "price"],
         include: [
           {
             association: "Shops",
-            attributes: ["id", "name", "number", "street", "city", "state"],
+            attributes: ["id", "name"],
+            through: { attributes: [] },
+          },
+          {
+            association: "Platforms",
+            attributes: ["id", "name"],
             through: { attributes: [] },
           },
         ],
