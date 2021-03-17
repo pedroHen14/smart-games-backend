@@ -9,6 +9,7 @@ const platformController = require("./controllers/platforms");
 
 routes.get("/games", gameController.index);
 routes.get("/games/:id", gameController.find);
+routes.put("/games/:id", gameController.update);
 
 routes.get("/shops", shopController.index);
 routes.get("/shops/:id", shopController.find);

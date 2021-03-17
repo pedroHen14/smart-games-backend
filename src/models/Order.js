@@ -13,9 +13,7 @@ class Order extends Model {
     );
   }
 
-  static associate(models) {
-    this.hasOne(models.Game);
-  }
+  static associate(models) {}
 }
 
 module.exports = Order;

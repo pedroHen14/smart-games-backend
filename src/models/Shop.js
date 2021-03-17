@@ -5,10 +5,7 @@ class Shop extends Model {
     super.init(
       {
         name: DataTypes.STRING,
-        number: DataTypes.INTEGER,
-        street: DataTypes.STRING,
-        city: DataTypes.STRING,
-        state: DataTypes.STRING,
+        map_link: DataTypes.STRING,
       },
       {
         sequelize,

@@ -4,7 +4,7 @@ module.exports = {
   async index(req, res) {
     try {
       const shops = await Shop.findAll({
-        attributes: ["id", "name"],
+        attributes: ["id", "name", "map_link"],
       });
 
       res.send(shops);
@@ -18,7 +18,7 @@ module.exports = {
 
     try {
       const shop = await Shop.findByPk(shopId, {
-        attributes: ["id", "name"],
+        attributes: ["id", "name", "map_link"],
       });
 
       res.send(shop);
