@@ -6,6 +6,8 @@ class Shop extends Model {
       {
         name: DataTypes.STRING,
         map_link: DataTypes.STRING,
+        latitude: DataTypes.DOUBLE,
+        longitude: DataTypes.DOUBLE,
       },
       {
         sequelize,

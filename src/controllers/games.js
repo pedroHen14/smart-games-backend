@@ -8,7 +8,7 @@ module.exports = {
         include: [
           {
             association: "Shops",
-            attributes: ["id", "name", "map_link"],
+            attributes: ["id", "name", "map_link", "latitude", "longitude"],
             through: { attributes: [] },
           },
           {
@@ -34,7 +34,7 @@ module.exports = {
         include: [
           {
             association: "Shops",
-            attributes: ["id", "name", "map_link"],
+            attributes: ["id", "name", "map_link", "latitude", "longitude"],
             through: { attributes: [] },
           },
           {
@@ -73,7 +73,9 @@ module.exports = {
 
       //Definindo o desconto do produto em 10% se ainda não houver desconto
       if (game.discount == 0) game.discount = 10;
+      else game.discount = 0;
 
+      //Salvando o novo valor do campo de desconto no banco de dados
       game.save();
 
       res.status(201).send(game);

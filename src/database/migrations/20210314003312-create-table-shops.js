@@ -12,6 +12,18 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false,
       },
+      map_link: {
+        type: Sequelize.TEXT,
+        allowNull: false,
+      },
+      latitude: {
+        type: Sequelize.DOUBLE,
+        allowNull: false,
+      },
+      longitude: {
+        type: Sequelize.DOUBLE,
+        allowNull: false,
+      },
       created_at: {
         type: Sequelize.DATE,
         allowNull: true,
